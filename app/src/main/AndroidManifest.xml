@@ -28,9 +28,9 @@
             android:theme="@style/Translucent"
             android:windowSoftInputMode="adjustNothing"
             android:exported="true">
-            <meta-data
-                android:name="android.app.searchable"
-                android:resource="@xml/searchable" />
+<!--            <meta-data-->
+<!--                android:name="android.app.searchable"-->
+<!--                android:resource="@xml/searchable" />-->
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -123,6 +123,7 @@
                 <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".activities.SettingsActivity"
             android:label="@string/menu_settings"

@@ -1,5 +1,7 @@
 package com.github.axet.bookreader.fragments;
 
+import static android.content.Context.RECEIVER_NOT_EXPORTED;
+
 import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -12,13 +14,10 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.BatteryManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v4.view.ViewCompat;
-import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -31,6 +30,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.core.view.MenuItemCompat;
+import androidx.core.view.ViewCompat;
+import androidx.fragment.app.Fragment;
+
+import com.github.axet.androidlibrary.BuildConfig;
 import com.github.axet.androidlibrary.preferences.ScreenlockPreference;
 import com.github.axet.androidlibrary.widgets.ErrorDialog;
 import com.github.axet.androidlibrary.widgets.InvalidateOptionsMenuCompat;
@@ -38,7 +43,6 @@ import com.github.axet.androidlibrary.widgets.PopupWindowCompat;
 import com.github.axet.androidlibrary.widgets.ThemeUtils;
 import com.github.axet.androidlibrary.widgets.TreeListView;
 import com.github.axet.androidlibrary.widgets.TreeRecyclerView;
-import com.github.axet.androidlibrary.BuildConfig;
 import com.github.axet.bookreader.R;
 import com.github.axet.bookreader.activities.FullscreenActivity;
 import com.github.axet.bookreader.activities.MainActivity;
@@ -46,7 +50,6 @@ import com.github.axet.bookreader.app.BookApplication;
 import com.github.axet.bookreader.app.ComicsPlugin;
 import com.github.axet.bookreader.app.Plugin;
 import com.github.axet.bookreader.app.Storage;
-import com.github.axet.bookreader.app.TTFManager;
 import com.github.axet.bookreader.widgets.BookmarksDialog;
 import com.github.axet.bookreader.widgets.FBReaderView;
 import com.github.axet.bookreader.widgets.FontsPopup;
@@ -343,7 +346,25 @@ public class ReaderFragment extends Fragment implements MainActivity.SearchListe
                 fb.invalidateFooter();
             }
         };
-        battery.onReceive(getContext(), getContext().registerReceiver(battery, new IntentFilter(Intent.ACTION_BATTERY_CHANGED)));
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            battery.onReceive(
+                    getContext(),
+                    getContext().registerReceiver(
+                            battery,
+                            new IntentFilter(Intent.ACTION_BATTERY_CHANGED),
+                            RECEIVER_NOT_EXPORTED
+                    )
+            );
+        } else {
+            battery.onReceive(
+                    getContext(),
+                    getContext().registerReceiver(
+                            battery,
+                            new IntentFilter(Intent.ACTION_BATTERY_CHANGED)
+                    )
+            );
+        }
 
         time.run();
 

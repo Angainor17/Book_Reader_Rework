@@ -47,20 +47,14 @@ configurations { // TODO fix library dependency copy
 }
 
 dependencies {
-    implementation 'com.android.support:design:28.0.0'
-    implementation 'com.android.support:support-vector-drawable:28.0.0'
-    implementation 'com.android.support.constraint:constraint-layout:2.0.4'
-
     implementation 'com.github.axet.fbreader:library:0.1.18'
     implementation 'com.github.axet:android-library:1.35.21'
 
-//    implementation(libs.axet.android.library)
     implementation(libs.axet.djvulibre)
     implementation(libs.axet.pdfium)
     implementation(libs.axet.k2pdfopt)
     implementation(libs.axet.wget) { exclude group: 'org.json', module: 'json' }
 
-//    implementation libs.appcompat
-//    implementation libs.material
-
+    implementation libs.appcompat
+    implementation libs.material
 }

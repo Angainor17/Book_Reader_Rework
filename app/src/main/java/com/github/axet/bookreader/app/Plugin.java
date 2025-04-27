@@ -7,8 +7,9 @@ import android.graphics.Canvas;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.support.v4.graphics.ColorUtils;
 import android.util.Log;
+
+import androidx.core.graphics.ColorUtils;
 
 import com.github.axet.bookreader.widgets.FBReaderView;
 import com.github.axet.bookreader.widgets.ScrollWidget;

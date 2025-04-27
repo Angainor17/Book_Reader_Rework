@@ -53,7 +53,7 @@ public class StoragePathPreferenceCompat extends com.github.axet.androidlibrary.
             public OpenFileDialog fileDialogBuild() {
                 final OpenFileDialog d = super.fileDialogBuild();
 
-                d.setNeutralButton(R.string.default_button, new DialogInterface.OnClickListener() {
+                d.setNeutralButton(com.github.axet.androidlibrary.R.string.default_button, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         File path = storage.getLocalStorage();

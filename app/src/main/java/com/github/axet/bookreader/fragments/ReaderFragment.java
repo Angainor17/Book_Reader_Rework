@@ -38,7 +38,7 @@ import com.github.axet.androidlibrary.widgets.PopupWindowCompat;
 import com.github.axet.androidlibrary.widgets.ThemeUtils;
 import com.github.axet.androidlibrary.widgets.TreeListView;
 import com.github.axet.androidlibrary.widgets.TreeRecyclerView;
-import com.github.axet.bookreader.BuildConfig;
+import com.github.axet.androidlibrary.BuildConfig;
 import com.github.axet.bookreader.R;
 import com.github.axet.bookreader.activities.FullscreenActivity;
 import com.github.axet.bookreader.activities.MainActivity;
@@ -555,7 +555,7 @@ public class ReaderFragment extends Fragment implements MainActivity.SearchListe
             if (v == null || !ViewCompat.isAttachedToWindow(v))
                 v = getOverflowMenuButton(getActivity());
             PopupWindowCompat.showAsTooltip(fontsPopup, v, Gravity.BOTTOM,
-                    ThemeUtils.getThemeColor(getContext(), R.attr.colorButtonNormal), // v has overflow ThemedContext
+                    ThemeUtils.getThemeColor(getContext(), com.github.axet.androidlibrary.R.attr.colorButtonNormal), // v has overflow ThemedContext
                     ThemeUtils.dp2px(getContext(), 300));
         }
         if (id == R.id.action_rtl) {

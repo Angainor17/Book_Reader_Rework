@@ -150,7 +150,7 @@ public class BookmarksDialog extends AlertDialog.Builder { // bookmarks list dia
                             } else if (id == R.id.action_delete) {
                                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                                 builder.setTitle(R.string.delete_bookmark);
-                                builder.setMessage(R.string.are_you_sure);
+                                builder.setMessage(com.github.axet.androidlibrary.R.string.are_you_sure);
                                 builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {

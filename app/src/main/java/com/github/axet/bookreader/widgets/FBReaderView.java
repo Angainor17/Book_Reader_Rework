@@ -1139,7 +1139,7 @@ public class FBReaderView extends RelativeLayout {
     }
 
     public void configColorProfile(SharedPreferences shared) {
-        if (shared.getString(BookApplication.PREFERENCE_THEME, "").equals(getContext().getString(R.string.Theme_Dark))) {
+        if (shared.getString(BookApplication.PREFERENCE_THEME, "").equals(getContext().getString(com.github.axet.androidlibrary.R.string.Theme_Dark))) {
             config.setValue(app.ViewOptions.ColorProfileName, ColorProfile.NIGHT);
         } else {
             config.setValue(app.ViewOptions.ColorProfileName, ColorProfile.DAY);
@@ -1863,8 +1863,8 @@ public class FBReaderView extends RelativeLayout {
 
         WallpaperLayout f = new WallpaperLayout(context);
         ImageButton c = new ImageButton(context);
-        c.setImageResource(R.drawable.ic_close_black_24dp);
-        c.setColorFilter(ThemeUtils.getThemeColor(context, R.attr.colorAccent));
+        c.setImageResource(com.github.axet.androidlibrary.R.drawable.ic_close_black_24dp);
+        c.setColorFilter(ThemeUtils.getThemeColor(context, com.github.axet.androidlibrary.R.attr.colorAccent));
         f.addView(c, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.RIGHT | Gravity.TOP));
 
         final FBReaderView r = new FBReaderView(context) {
@@ -1934,7 +1934,7 @@ public class FBReaderView extends RelativeLayout {
                 }
             });
         }
-        builder.setPositiveButton(R.string.close, new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(com.github.axet.androidlibrary.R.string.close, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
             }

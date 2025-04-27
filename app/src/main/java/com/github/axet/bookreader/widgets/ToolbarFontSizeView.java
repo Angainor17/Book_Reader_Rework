@@ -34,7 +34,7 @@ public class ToolbarFontSizeView extends ToolbarButtonView {
         image.setClickable(false);
         image.setFocusable(false);
         image.setImageResource(R.drawable.ic_format_size_white_24dp);
-        image.setColorFilter(ThemeUtils.getColor(getContext(), R.color.white));
+        image.setColorFilter(ThemeUtils.getColor(getContext(), android.R.color.white));
         image.setBackgroundDrawable(null);
         text.setText("0.8");
     }

@@ -82,14 +82,14 @@ public class BookmarkPopup { // bookmark click popup
         }
         w = new PopupWindow();
         ImageView trash = new ImageView(getContext());
-        trash.setImageResource(R.drawable.ic_close_black_24dp);
-        trash.setColorFilter(ThemeUtils.getThemeColor(getContext(), R.attr.colorAccent));
+        trash.setImageResource(com.github.axet.androidlibrary.R.drawable.ic_close_black_24dp);
+        trash.setColorFilter(ThemeUtils.getThemeColor(getContext(), com.github.axet.androidlibrary.R.attr.colorAccent));
         trash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                 builder.setTitle(R.string.delete_bookmark);
-                builder.setMessage(R.string.are_you_sure);
+                builder.setMessage(com.github.axet.androidlibrary.R.string.are_you_sure);
                 builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

@@ -97,7 +97,7 @@ public class LibraryFragment extends Fragment implements MainActivity.SearchList
             LayoutInflater inflater = LayoutInflater.from(context);
 
             toolbar = v.findViewById(R.id.search_header_toolbar_parent);
-            searchpanel = v.findViewById(R.id.search_panel);
+            searchpanel = v.findViewById(org.geometerplus.zlibrary.ui.android.R.id.search_panel);
             searchtoolbar = (LinearLayout) v.findViewById(R.id.search_header_toolbar);
 
             toolbar.setVisibility(View.GONE);
@@ -580,7 +580,7 @@ public class LibraryFragment extends Fragment implements MainActivity.SearchList
                         if (item.getItemId() == R.id.action_delete) {
                             AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                             builder.setTitle(R.string.book_delete);
-                            builder.setMessage(R.string.are_you_sure);
+                            builder.setMessage(com.github.axet.androidlibrary.R.string.are_you_sure);
                             builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {

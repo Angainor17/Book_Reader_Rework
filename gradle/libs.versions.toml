@@ -1,0 +1,25 @@
+[versions]
+agp = "8.9.2"
+appcompat = "1.7.0"
+material = "1.12.0"
+androidLibrary = "1.35.21"
+djvulibre = "0.1.4"
+k2pdfopt = "0.1.6"
+fbreader = "0.1.18"
+pdfium = "2.0.16"
+wget = "1.7.0"
+
+[libraries]
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+axet-wget = { module = "com.github.axet:wget", version.ref = "wget" }
+axet-android-library = { module = "com.github.axet:android-library", version.ref = "androidLibrary" }
+axet-djvulibre = { module = "com.github.axet:djvulibre", version.ref = "djvulibre" }
+axet-pdfium = { module = "com.github.axet:pdfium", version.ref = "pdfium" }
+axet-k2pdfopt = { module = "com.github.axet:k2pdfopt", version.ref = "k2pdfopt" }
+axet-fbreader = { module = "'com.github.axet.fbreader:library", version.ref = "fbreader" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+

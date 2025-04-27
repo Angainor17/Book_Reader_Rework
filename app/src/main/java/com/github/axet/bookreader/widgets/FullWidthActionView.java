@@ -9,8 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import com.github.axet.bookreader.R;
-
 
 public class FullWidthActionView extends FrameLayout {
     public FullWidthActionView(Context context) {
@@ -40,7 +38,7 @@ public class FullWidthActionView extends FrameLayout {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         ViewGroup f = (ViewGroup) getParent(); // FrameLayout
         ViewGroup m = (ViewGroup) f.getParent(); // NavigationMenuItemView
-        View t = m.findViewById(com.github.axet.androidlibrary.R.id.design_menu_item_text);
+        View t = m.findViewById(android.support.design.R.id.design_menu_item_text);
         if (t != null) t.setVisibility(GONE);
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
